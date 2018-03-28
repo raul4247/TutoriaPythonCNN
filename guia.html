@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guia de Instalação!</title>
-  <link rel="icon" href="https://openclipart.org/detail/248484/python-language-logo">
+  <link rel="icon" href="https://openclipart.org/download/248484/387.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
@@ -24,72 +24,86 @@
   <br>
   <div class="container">
     <div class="columns">
-      <div class="column" style="border-right: 1px solid #DDD;">
+      <div class="column" style="border-right: 1px solid #DDD;padding: 2%;">
         <h1 class="title">Theano + Lasagne</h1>
         <hr>
+
         <p><strong>1. Instalar Conda</strong></p>
         <p>Conda é um gerenciador de pacotes, ambientes e dependências. Instale a versão para Python 3.6, que será ultilizada para instalar outras dependências.</p>
-        <p>Instale em <i>C:\Users\Meu_Usuario\Anaconda3</i>, e selecione a opção <i>Add Anaconda to my PATH environment variable</i>.</p>
+        <p>Instale em <strong><i>C:\Users\Meu_Usuario\Anaconda3</i></strong>, e selecione a opção <strong><i>Add Anaconda to my PATH environment variable</i></strong>.</p>
         <p>Faça download e instale o <a target="_blank" href="https://www.anaconda.com/download/">Conda</a>.</p>
         <hr>
+
         <p><strong>2. Verifique a instalação</strong></p>
-        <p>Execute os comandos:
-          <br>
-          <strong><i>conda -V</i></strong>
-          <br>
-          <strong><i>python -V</i></strong>
-          <br>
-          <strong><i>pip -V</i></strong>
-          <br>
-        Eles vão verificar se o conda, python e pip estão devidamente instalados e adicionados no PATH do Windows.</p>
+        <p>Execute os comandos:</p>
+        <code class="html">conda -V</code><br><br>
+        <code class="html">python -V</code><br><br>
+        <code class="html">pip -V</code><br>
+        <p>Eles vão verificar se o conda, python e pip estão devidamente instalados e adicionados no PATH do Windows.</p>
         <p>Execute depois o comando <strong><i>conda update -n base conda</i></strong></p>
         <hr>
+
         <p><strong>3. Instalar o Theano e o Lasagne</strong></p>
-        <p>Rode os comandos em sequência:
-          <br>
-          <strong><i>conda install theano</i></strong>
-          <br>
-          <strong><i>conda install -c toli lasagne</i></strong>
-          <br>
-          <strong><i>pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip</i></strong>
-          <br></p>
-          <hr>
-          <p><strong>4. Configurar o Theano</strong></p>
-          <p>Crie um arquivo <strong><i>.theanorc</i></strong> no diretório <strong><i>C:\Users\Meu_Usuario</strong></i> com o seguinte conteúdo:
-            <br>
-            <br>
-            [global]
-            <br>
-            floatx = float32
-            <br>
-            mode = FAST_RUN
-            <br>
-            device=cpu
-            <br>
-            dnn.enabled=False
-            <br>
-            [blas]
-            <br>
-            ldflags = -LC:\Users\Meu_Usuario\Anaconda3\Library\bin -lmkl_rt
-            <br>
-          </p>
-          <hr>
-          <p><strong>5. Testar funcionamento da bibliotecas e ferramentas</strong></p>
-          <p>Faça download do script de teste do <a target="_blank" href="https://github.com/Lasagne/Lasagne/blob/master/examples/mnist.py">MNIST</a> e execute o comando:</p>
-          <p><strong><i>python mnist.py mlp 5</i></strong></p>
-          <br>
-          <br>
-        </div>
-        <div class="column">
-          <h1 class="title">TensorFlow + Keras</h1>
-          <hr>
-          <p><strong>1. Instalar Conda</strong></p>
-          <p>Conda é um gerenciador de pacotes, ambientes e dependências. Instale a versão para Python 3.6, que será ultilizada para instalar outras dependências.</p>
-          <p>Instale em <i>C:\Users\Meu_Usuario\Anaconda3</i>, e selecione a opção <i>Add Anaconda to my PATH environment variable</i>.</p>
-          <p>Faça download e instale o <a target="_blank" href="https://www.anaconda.com/download/">Conda</a>.</p>
-          <hr>
-          <hr>
-        </div>
+        <p>Rode os comandos em sequência:</p>
+        <code class="html">conda install theano</code><br><br>
+        <code class="html">conda install -c toli lasagne</code><br><br>
+        <code class="html">pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip</code><br>
+        <hr>
+
+        <p><strong>4. Configurar o Theano</strong></p>
+        <p>Crie um arquivo <strong><i>.theanorc</i></strong> no diretório <strong><i>C:\Users\Meu_Usuario</strong></i> com o seguinte conteúdo:</p>
+        <pre>
+          [global]
+          floatx = float32
+          mode = FAST_RUN
+          device=cpu
+          dnn.enabled=False
+          [blas]
+          ldflags = -LC:\Users\Meu_Usuario\Anaconda3\Library\bin -lmkl_rt
+        </pre>
+        <hr>
+
+        <p><strong>5. Testar funcionamento das bibliotecas e ferramentas</strong></p>
+        <p>Faça download do script de teste do <a target="_blank" href="https://github.com/Lasagne/Lasagne/blob/master/examples/mnist.py">MNIST</a> e execute o comando:</p>
+        <code class="html">python mnist.py mlp 5</code><br><br>
+        <br>
+        <br>
       </div>
-    </body>
-    </html>
+      <div class="column" style="padding:2%;">
+        <h1 class="title">TensorFlow + Keras</h1>
+        <hr>
+        <p><strong>1. Siga o tutorial do Theano + Lasagne</strong></p>
+        <p> Ao seguir o outro tutorial, você já terá instalado o Conda, Python, Pip, e algumas dependências necessárias para utilizar o TensorFlow + Keras.
+        </p>
+        <hr>
+
+        <p><strong>2. Criar um ambiente no conda para usar o TensorFlow</strong></p>
+        <p>O Keras e o Lasagne utilizam versões diferentes do python, então criamos um ambiente com o conda e instalamos as dependências restantes.
+        </p>
+        <p>Execute os comandos em ordem:</p>
+        <code class="html">conda create -n tensorflow python=3.6</code><br><br>
+        <code class="html">activate tensorflow</code><br><br>
+        <code class="html">conda install -c conda-forge tensorflow</code><br><br>
+        <code class="html">pip install --upgrade -I setuptools</code><br><br>
+        <code class="html">conda install -c conda-forge keras</code><br><br>
+        <code class="html">pip install tensorflow==1.2.0 --ignore-installed</code><br>
+        <hr>    
+
+        <p><strong>3. Testar funcionamento das bibliotecas e ferramentas</strong></p>
+        <p>Sempre que for usar o tensorflow + keras, execute os comandos:</p>
+        <code class="html">activate tensorflow</code><br><br>
+        <code class="html">set "KERAS_BACKEND=tensorflow"</code><br>
+        <br>
+        <p>Teste a biblioteca fazendo o download do script do <a  target="_blank" href="https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py">MNIST</a> e execute o comando:</p>
+        <code class="html">python mnist.py</code>
+        <br>
+        <br>
+        <p>*Caso deseje usar outras bibliotecas, abra um novo prompt para sair do ambiente criado.</p>    
+      </div>
+    </div>
+    <hr>
+    <p>*Tutorial testado no Windows 10.</p>
+    <br>
+  </div>
+</body>
+</html>
